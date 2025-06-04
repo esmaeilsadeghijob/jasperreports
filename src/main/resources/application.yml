@@ -3,9 +3,17 @@ spring:
     name: jasperreports
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
-    username: root
-    password: 123456
+    username: postgres
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
