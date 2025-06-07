@@ -1,9 +1,6 @@
-curl -X POST -F "file=@sample_report.jasper" http://localhost:8080/reports/upload
+#curl -X POST -F "file=@D:/projects/jasperreports/file/jasper_report_template.jrxml"  -F "cid=123" -F "sid=456" -F "reportCode=789"   http://localhost:8080/jasperReports/upload
+#curl -X GET -F "file=@D:/projects/jasperreports/file/jasper_report_template.jrxml"  -F "cid=123" -F "sid=456" -F "reportCode=789"   http://localhost:8080/preview/a2c1dc31-5fff-4511-bfda-209195bea633
+curl -X GET http://localhost:8080/jasperReports/preview/a2c1dc31-5fff-4511-bfda-209195bea633 --output report_preview.jasper
 
-#curl -X GET "http://localhost:8080/reports/download?reportId=1&param1=value1&param2=value2"
-#curl -X POST -F "file=@sample_report.jasper" http://localhost:8080/reports/upload
-#curl -X GET "http://localhost:8080/reports/download?reportPath=sample_report.jasper" -o output.xlsx
-#curl -X GET "http://localhost:8080/reports/download/excel?reportPath=sample_report.jasper" -o output.xlsx
-#curl -X GET "http://localhost:8080/reports/download?reportPath=sample_report.jasper&username=Ali&date=2025-06-02" -o output.pdf
-#curl -X GET "http://localhost:8080/reports/download?reportPath=sample_report.jasper" -o output.pdf
-
+#curl -X POST -F "file=@D:/projects/jasperreports/file/jasper_report_template.jrxml" http://localhost:8080/reports/upload
+#curl -X GET "http://localhost:8080/reports/download-jasper?reportId=95b761c3-3108-4c3d-8be3-8504b5baa3ea" -o report.jasper

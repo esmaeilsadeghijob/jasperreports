@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="jasper_report_template" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30">
+
+    <property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+
+    <!-- عنوان گزارش -->
+    <title>
+        <band height="50">
+            <textField>
+                <reportElement x="200" y="10" width="300" height="30"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression class="java.lang.String">"گزارش سیستم"</textFieldExpression>
+            </textField>
+        </band>
+    </title>
+
+    <!-- پارامترها -->
+    <parameter name="cid" class="java.lang.Integer"/>
+    <parameter name="sid" class="java.lang.Integer"/>
+    <parameter name="reportCode" class="java.lang.Integer"/>
+
+    <!-- فیلدهای گزارش -->
+    <field name="reportContent" class="java.lang.String"/>
+    <field name="fixed" class="java.lang.Boolean"/>
+
+    <!-- نمایش پارامترها در هدر -->
+    <pageHeader>
+        <band height="30">
+            <textField>
+                <reportElement x="50" y="5" width="500" height="20"/>
+                <textElement>
+                    <font size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression class="java.lang.String">
+                    "کد گزارش: " + $P{reportCode} + " | CID: " + $P{cid} + " | SID: " + $P{sid}
+                </textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+
+    <!-- نمایش اطلاعات -->
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="200" height="15"/>
+                <textElement/>
+                <textFieldExpression class="java.lang.String">$F{reportContent}</textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+</jasperReport>

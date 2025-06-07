@@ -1,15 +1,16 @@
-package com.husha.jasperreports.entities;
+package com.husha.jasperreports.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 @Entity
-@Table(name = "jasper_reports_params")
 public class JasperReportParam {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    private UUID id;
     private String paramName;
     private int paramType;
 }
