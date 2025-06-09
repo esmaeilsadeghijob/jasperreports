@@ -4,6 +4,7 @@ import com.husha.jasperreports.entity.JasperReport;
 import com.husha.jasperreports.repository.JasperReportRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -28,4 +29,13 @@ public class JasperReportService {
     public Optional<JasperReport> getReport(UUID id) {
         return jasperReportRepository.findById(id);
     }
+
+    public List<JasperReport> getAllReports() {
+        return jasperReportRepository.findAll();
+    }
+
+    public void deleteReport(UUID id) {
+        jasperReportRepository.deleteById(id);
+    }
+
 }
