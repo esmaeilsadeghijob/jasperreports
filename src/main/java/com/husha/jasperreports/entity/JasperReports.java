@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Data
 @Entity
-public class JasperReport {
+public class JasperReports {
     @Id
     @GeneratedValue
     private UUID id;

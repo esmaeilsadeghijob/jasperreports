@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
-              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
-              name="jasper_report_template" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30">
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+                                  http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="jasper_report_template" pageWidth="595" pageHeight="842" columnWidth="535"
+              leftMargin="30" rightMargin="30">
 
     <property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+
+    <!-- پارامترهای گزارش -->
+    <parameter name="cid" class="java.lang.Integer"/>
+    <parameter name="sid" class="java.lang.Integer"/>
+    <parameter name="reportCode" class="java.lang.Integer"/>
+
+    <!-- فیلدهای گزارش -->
+    <field name="reportContent" class="java.lang.String"/>
+    <field name="fixed" class="java.lang.Boolean"/>
 
     <!-- عنوان گزارش -->
     <title>
@@ -17,15 +29,6 @@
             </textField>
         </band>
     </title>
-
-    <!-- پارامترها -->
-    <parameter name="cid" class="java.lang.Integer"/>
-    <parameter name="sid" class="java.lang.Integer"/>
-    <parameter name="reportCode" class="java.lang.Integer"/>
-
-    <!-- فیلدهای گزارش -->
-    <field name="reportContent" class="java.lang.String"/>
-    <field name="fixed" class="java.lang.Boolean"/>
 
     <!-- نمایش پارامترها در هدر -->
     <pageHeader>
