@@ -11,7 +11,7 @@ public class JasperReports {
     @Id
     @GeneratedValue
     private UUID id;
-
+    private String name;
     private int cid;
     private int sid;
     private int reportCode;
