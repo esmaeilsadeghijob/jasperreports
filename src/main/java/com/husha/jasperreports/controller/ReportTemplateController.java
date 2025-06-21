@@ -9,8 +9,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/reports/jrxml/templates")
 public class ReportTemplateController {
@@ -40,11 +42,11 @@ public class ReportTemplateController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<String> createTemplate(@RequestParam(required = false) String templateName,
-                                                 @RequestBody(required = false) Map<String, String> fields) {
+    public ResponseEntity<String> createTemplate(@RequestParam("name") String name,
+                                                 @RequestBody List<Map<String, String>> fields) {
         try {
-            reportTemplateService.createJrxmlTemplate(templateName, fields);
-            return ResponseEntity.ok("تمپلیت '" + templateName + "' با موفقیت ایجاد شد!");
+            reportTemplateService.createJrxmlTemplate(name, fields);
+            return ResponseEntity.ok("تمپلیت '" + name + "' با موفقیت ایجاد شد!");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("خطا در ایجاد تمپلیت: " + e.getMessage());
